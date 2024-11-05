@@ -1,0 +1,1 @@
+{"version":3,"file":"formatThousands.js","sourceRoot":"","sources":["../../src/lib/formatThousands.ts"],"names":[],"mappings":";;AAgBA,0CAQC;AAxBD;;;;;;;;;;;;;;;GAeG;AACH,SAAgB,eAAe,CAAC,GAAW,EAAE,gBAAwB,CAAC;IAClE,sBAAsB;IACtB,MAAM,eAAe,GAAG,GAAG,CAAC,cAAc,CAAC,OAAO,EAAE;QAChD,qBAAqB,EAAE,aAAa;QACpC,qBAAqB,EAAE,aAAa;KACvC,CAAC,CAAC;IAEH,OAAO,eAAe,CAAC;AAC3B,CAAC"}

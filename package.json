@@ -1,0 +1,47 @@
+{
+  "name": "xxm-test-js",
+  "version": "1.0.1",
+  "description": "xxm-js通用js工具(utils)库",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "npx tsc -p .",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "npm run docs:build && gh-pages -d .vuepress/dist"
+  },
+  "keywords": [
+    "xxm",
+    "test",
+    "js",
+    "TS",
+    "typeScript",
+    "debounce",
+    "deepCopy",
+    "flattenArray",
+    "formatThousands",
+    "getQueryObject",
+    "getWeek",
+    "handleTime",
+    "isType",
+    "sortArray",
+    "throttle"
+  ],
+  "author": "xxm",
+  "files": [
+    "dist"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.2.0",
+    "typescript": "^5.6.3",
+    "vuepress": "^1.9.10"
+  },
+  "dependencies": {
+    "vuepress-plugin-code-copy": "^1.0.6"
+  }
+}
