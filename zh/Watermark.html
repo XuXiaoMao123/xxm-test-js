@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Watermark - 页面水印类 | xxm-test-js</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="xxm-test-js。一个开箱即用的函数库。提供了日常开发时所需的一些常用函数方法。该js库提供了丰富的代码提示功能，无需阅读文档，方便开发者快速使用。">
+    
+    <link rel="preload" href="/xxm-test-js/assets/css/0.styles.2c1b7aba.css" as="style"><link rel="preload" href="/xxm-test-js/assets/js/app.129d9e4b.js" as="script"><link rel="preload" href="/xxm-test-js/assets/js/2.4470ce03.js" as="script"><link rel="preload" href="/xxm-test-js/assets/js/1.adb73c09.js" as="script"><link rel="preload" href="/xxm-test-js/assets/js/26.21d4d4df.js" as="script"><link rel="prefetch" href="/xxm-test-js/assets/js/10.acd366ff.js"><link rel="prefetch" href="/xxm-test-js/assets/js/11.0256ff5f.js"><link rel="prefetch" href="/xxm-test-js/assets/js/12.137a9576.js"><link rel="prefetch" href="/xxm-test-js/assets/js/13.786f62b7.js"><link rel="prefetch" href="/xxm-test-js/assets/js/14.91be0496.js"><link rel="prefetch" href="/xxm-test-js/assets/js/15.3b92efb8.js"><link rel="prefetch" href="/xxm-test-js/assets/js/16.47e1d84d.js"><link rel="prefetch" href="/xxm-test-js/assets/js/17.368b07ea.js"><link rel="prefetch" href="/xxm-test-js/assets/js/18.8241d824.js"><link rel="prefetch" href="/xxm-test-js/assets/js/19.56a0d05b.js"><link rel="prefetch" href="/xxm-test-js/assets/js/20.8f60a139.js"><link rel="prefetch" href="/xxm-test-js/assets/js/21.e21ffad3.js"><link rel="prefetch" href="/xxm-test-js/assets/js/22.3b50cedc.js"><link rel="prefetch" href="/xxm-test-js/assets/js/23.910892dd.js"><link rel="prefetch" href="/xxm-test-js/assets/js/24.995f4255.js"><link rel="prefetch" href="/xxm-test-js/assets/js/25.2ea18555.js"><link rel="prefetch" href="/xxm-test-js/assets/js/27.88f6ac88.js"><link rel="prefetch" href="/xxm-test-js/assets/js/28.3666a4a1.js"><link rel="prefetch" href="/xxm-test-js/assets/js/29.3d93c663.js"><link rel="prefetch" href="/xxm-test-js/assets/js/3.8af8fcbf.js"><link rel="prefetch" href="/xxm-test-js/assets/js/30.60940fab.js"><link rel="prefetch" href="/xxm-test-js/assets/js/31.2311b96f.js"><link rel="prefetch" href="/xxm-test-js/assets/js/32.9f493ffe.js"><link rel="prefetch" href="/xxm-test-js/assets/js/33.8112eacf.js"><link rel="prefetch" href="/xxm-test-js/assets/js/34.20028c5f.js"><link rel="prefetch" href="/xxm-test-js/assets/js/35.fc658c4c.js"><link rel="prefetch" href="/xxm-test-js/assets/js/36.57abefea.js"><link rel="prefetch" href="/xxm-test-js/assets/js/37.8f6e274f.js"><link rel="prefetch" href="/xxm-test-js/assets/js/38.5a36618b.js"><link rel="prefetch" href="/xxm-test-js/assets/js/39.1b7c1947.js"><link rel="prefetch" href="/xxm-test-js/assets/js/4.0471e9ae.js"><link rel="prefetch" href="/xxm-test-js/assets/js/40.92ff5703.js"><link rel="prefetch" href="/xxm-test-js/assets/js/41.0cc7552d.js"><link rel="prefetch" href="/xxm-test-js/assets/js/42.bd200973.js"><link rel="prefetch" href="/xxm-test-js/assets/js/43.d2cf12e4.js"><link rel="prefetch" href="/xxm-test-js/assets/js/44.d1b4b810.js"><link rel="prefetch" href="/xxm-test-js/assets/js/45.505f3d9f.js"><link rel="prefetch" href="/xxm-test-js/assets/js/46.c4c27d6d.js"><link rel="prefetch" href="/xxm-test-js/assets/js/47.f6dbcd52.js"><link rel="prefetch" href="/xxm-test-js/assets/js/48.3d5e5ed2.js"><link rel="prefetch" href="/xxm-test-js/assets/js/49.ca222b03.js"><link rel="prefetch" href="/xxm-test-js/assets/js/5.842b4107.js"><link rel="prefetch" href="/xxm-test-js/assets/js/50.70d32984.js"><link rel="prefetch" href="/xxm-test-js/assets/js/51.a3919824.js"><link rel="prefetch" href="/xxm-test-js/assets/js/52.06bf76a2.js"><link rel="prefetch" href="/xxm-test-js/assets/js/53.da5bd540.js"><link rel="prefetch" href="/xxm-test-js/assets/js/54.9659a012.js"><link rel="prefetch" href="/xxm-test-js/assets/js/55.304aca42.js"><link rel="prefetch" href="/xxm-test-js/assets/js/56.557c8e42.js"><link rel="prefetch" href="/xxm-test-js/assets/js/57.9c28f3db.js"><link rel="prefetch" href="/xxm-test-js/assets/js/58.cc63d196.js"><link rel="prefetch" href="/xxm-test-js/assets/js/59.254a19aa.js"><link rel="prefetch" href="/xxm-test-js/assets/js/6.9f813617.js"><link rel="prefetch" href="/xxm-test-js/assets/js/60.cfc546b8.js"><link rel="prefetch" href="/xxm-test-js/assets/js/61.6240884a.js"><link rel="prefetch" href="/xxm-test-js/assets/js/62.9c277dd5.js"><link rel="prefetch" href="/xxm-test-js/assets/js/63.e00db88b.js"><link rel="prefetch" href="/xxm-test-js/assets/js/64.ebc6b231.js"><link rel="prefetch" href="/xxm-test-js/assets/js/65.536289fc.js"><link rel="prefetch" href="/xxm-test-js/assets/js/66.640a11a8.js"><link rel="prefetch" href="/xxm-test-js/assets/js/67.d681ca0d.js"><link rel="prefetch" href="/xxm-test-js/assets/js/68.8814164a.js"><link rel="prefetch" href="/xxm-test-js/assets/js/7.deca3814.js"><link rel="prefetch" href="/xxm-test-js/assets/js/vendors~docsearch.a43fb3db.js">
+    <link rel="stylesheet" href="/xxm-test-js/assets/css/0.styles.2c1b7aba.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/xxm-test-js/" class="home-link router-link-active"><!----> <span class="site-name">xxm-test-js</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/xxm-test-js/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/xxm-test-js/zh/guide.html" class="nav-link">
+  指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/xxm-test-js/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/xxm-test-js/zh/guide.html" class="nav-link">
+  指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/xxm-test-js/zh/guide.html" class="sidebar-link">指南</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常用方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>时间方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>字符串/数字方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>数组/对象方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>滚动方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>浏览器方法</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>常用类</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/xxm-test-js/zh/TimeThread.html" class="sidebar-link">时间线程类（TimeThread）</a></li><li><a href="/xxm-test-js/zh/ScrollDirectionChecker.html" class="sidebar-link">滚动方向检测类（ScrollDirectionChecker）</a></li><li><a href="/xxm-test-js/zh/FormValidator.html" class="sidebar-link">表单验证类（FormValidator）</a></li><li><a href="/xxm-test-js/zh/WebSocketClient.html" class="sidebar-link">WebSocketClient - WebSocket 客户端封装类</a></li><li><a href="/xxm-test-js/zh/Watermark.html" aria-current="page" class="active sidebar-link">Watermark - 页面水印类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#主要特性" class="sidebar-link">主要特性</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#基本用法" class="sidebar-link">基本用法</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#配置选项" class="sidebar-link">配置选项</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#api-方法" class="sidebar-link">API 方法</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#使用场景" class="sidebar-link">使用场景</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#高级用法" class="sidebar-link">高级用法</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#样式定制" class="sidebar-link">样式定制</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#最佳实践" class="sidebar-link">最佳实践</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#注意事项" class="sidebar-link">注意事项</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#浏览器支持" class="sidebar-link">浏览器支持</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#常见问题" class="sidebar-link">常见问题</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#许可证" class="sidebar-link">许可证</a></li><li class="sidebar-sub-header"><a href="/xxm-test-js/zh/Watermark.html#相关链接" class="sidebar-link">相关链接</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="watermark-页面水印类"><a href="#watermark-页面水印类" class="header-anchor">#</a> Watermark - 页面水印类</h1> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p><code>Watermark</code> 是一个功能强大的页面水印类，用于在页面上添加防删除的文字水印。常用于版权保护、信息安全、防止截图泄密等场景。</p> <h2 id="主要特性"><a href="#主要特性" class="header-anchor">#</a> 主要特性</h2> <ul><li>✅ <strong>自定义内容</strong>：支持单行或多行文字水印</li> <li>✅ <strong>样式配置</strong>：可配置字体、颜色、大小、透明度、旋转角度等</li> <li>✅ <strong>防删除保护</strong>：使用 MutationObserver 监听 DOM 变化，自动恢复被删除或修改的水印</li> <li>✅ <strong>高性能</strong>：使用 Canvas 生成水印图案，以 base64 图片作为背景</li> <li>✅ <strong>响应式</strong>：自动适配容器大小变化</li> <li>✅ <strong>易于销毁</strong>：提供完整的销毁方法，清理所有资源</li></ul> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> xxm-test-js
+</code></pre></div><h2 id="基本用法"><a href="#基本用法" class="header-anchor">#</a> 基本用法</h2> <h3 id="简单示例"><a href="#简单示例" class="header-anchor">#</a> 简单示例</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Watermark <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'xxm-test-js'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建水印实例</span>
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'机密文档'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 显示水印</span>
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="多行水印"><a href="#多行水印" class="header-anchor">#</a> 多行水印</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'2024-01-01'</span><span class="token punctuation">,</span> <span class="token string">'仅供内部使用'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="自定义样式"><a href="#自定义样式" class="header-anchor">#</a> 自定义样式</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'版权所有'</span><span class="token punctuation">,</span>
+  width<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+  height<span class="token operator">:</span> <span class="token number">180</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+  fontWeight<span class="token operator">:</span> <span class="token string">'bold'</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'#FF0000'</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.2</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">30</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="配置选项"><a href="#配置选项" class="header-anchor">#</a> 配置选项</h2> <h3 id="watermarkoptions"><a href="#watermarkoptions" class="header-anchor">#</a> WatermarkOptions</h3> <table><thead><tr><th>参数</th> <th>类型</th> <th>默认值</th> <th>说明</th></tr></thead> <tbody><tr><td><code>content</code></td> <td><code>string \| string[]</code></td> <td><code>'水印'</code></td> <td>水印内容，支持字符串或字符串数组（多行）</td></tr> <tr><td><code>container</code></td> <td><code>HTMLElement</code></td> <td><code>document.body</code></td> <td>水印容器元素</td></tr> <tr><td><code>width</code></td> <td><code>number</code></td> <td><code>200</code></td> <td>水印宽度（像素）</td></tr> <tr><td><code>height</code></td> <td><code>number</code></td> <td><code>150</code></td> <td>水印高度（像素）</td></tr> <tr><td><code>fontSize</code></td> <td><code>number</code></td> <td><code>16</code></td> <td>字体大小（像素）</td></tr> <tr><td><code>fontStyle</code></td> <td><code>'normal' \| 'italic' \| 'oblique'</code></td> <td><code>'normal'</code></td> <td>字体样式</td></tr> <tr><td><code>fontWeight</code></td> <td><code>'normal' \| 'bold' \| 'bolder' \| 'lighter' \| number</code></td> <td><code>'normal'</code></td> <td>字体粗细</td></tr> <tr><td><code>fontFamily</code></td> <td><code>string</code></td> <td><code>'Microsoft YaHei, sans-serif'</code></td> <td>字体系列</td></tr> <tr><td><code>color</code></td> <td><code>string</code></td> <td><code>'#000000'</code></td> <td>文字颜色</td></tr> <tr><td><code>opacity</code></td> <td><code>number</code></td> <td><code>0.15</code></td> <td>透明度（0-1）</td></tr> <tr><td><code>rotate</code></td> <td><code>number</code></td> <td><code>-20</code></td> <td>旋转角度（度数，正数顺时针，负数逆时针）</td></tr> <tr><td><code>zIndex</code></td> <td><code>number</code></td> <td><code>9999</code></td> <td>层级</td></tr> <tr><td><code>lineHeight</code></td> <td><code>number</code></td> <td><code>20</code></td> <td>行间距（仅多行时有效）</td></tr> <tr><td><code>monitor</code></td> <td><code>boolean</code></td> <td><code>true</code></td> <td>是否启用防删除保护</td></tr> <tr><td><code>id</code></td> <td><code>string</code></td> <td><code>'watermark-container'</code></td> <td>水印层的 DOM id</td></tr></tbody></table> <h2 id="api-方法"><a href="#api-方法" class="header-anchor">#</a> API 方法</h2> <h3 id="create"><a href="#create" class="header-anchor">#</a> create()</h3> <p>创建并显示水印。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="update-options"><a href="#update-options" class="header-anchor">#</a> update(options)</h3> <p>更新水印配置并重新渲染。</p> <p><strong>参数：</strong></p> <ul><li><code>options</code>: 新的配置选项（部分更新）</li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 更新水印内容</span>
+watermark<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'新的水印内容'</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'#FF0000'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="destroy"><a href="#destroy" class="header-anchor">#</a> destroy()</h3> <p>销毁水印，移除 DOM 元素并清理所有监听器。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>watermark<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="使用场景"><a href="#使用场景" class="header-anchor">#</a> 使用场景</h2> <h3 id="场景-1-后台管理系统"><a href="#场景-1-后台管理系统" class="header-anchor">#</a> 场景 1：后台管理系统</h3> <p>在敏感信息页面添加用户信息水印，防止截图泄密。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Watermark <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'xxm-test-js'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取当前登录用户信息</span>
+<span class="token keyword">const</span> userInfo <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span>
+  id<span class="token operator">:</span> <span class="token string">'U001'</span><span class="token punctuation">,</span>
+  time<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建水印</span>
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token punctuation">[</span>
+    userInfo<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">工号: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>userInfo<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    userInfo<span class="token punctuation">.</span>time
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.12</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'#000000'</span><span class="token punctuation">,</span>
+  monitor<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 启用防删除</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="场景-2-文档预览页面"><a href="#场景-2-文档预览页面" class="header-anchor">#</a> 场景 2：文档预览页面</h3> <p>为在线文档添加版权水印。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'版权所有 © 2024 公司名称'</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">15</span><span class="token punctuation">,</span>
+  fontWeight<span class="token operator">:</span> <span class="token string">'bold'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="场景-3-指定容器水印"><a href="#场景-3-指定容器水印" class="header-anchor">#</a> 场景 3：指定容器水印</h3> <p>在特定容器内添加水印（如某个 div）。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'content-area'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'内部资料'</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> container<span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.08</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="场景-4-动态水印"><a href="#场景-4-动态水印" class="header-anchor">#</a> 场景 4：动态水印</h3> <p>根据不同情况动态更新水印内容。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'草稿'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 文档状态改变时更新水印</span>
+<span class="token keyword">function</span> <span class="token function">onDocumentStatusChange</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'draft'</span><span class="token operator">:</span>
+      watermark<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span> content<span class="token operator">:</span> <span class="token string">'草稿'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'#999999'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'review'</span><span class="token operator">:</span>
+      watermark<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span> content<span class="token operator">:</span> <span class="token string">'审核中'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'#FF9800'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'approved'</span><span class="token operator">:</span>
+      watermark<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span> content<span class="token operator">:</span> <span class="token string">'已批准'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'#4CAF50'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="场景-5-在-vue-3-中使用"><a href="#场景-5-在-vue-3-中使用" class="header-anchor">#</a> 场景 5：在 Vue 3 中使用</h3> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>containerRef<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>content-area<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 页面内容 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>敏感信息页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>这是一些需要保护的内容...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>ts<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ref<span class="token punctuation">,</span> onMounted<span class="token punctuation">,</span> onUnmounted <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Watermark <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'xxm-test-js'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> containerRef <span class="token operator">=</span> ref<span class="token operator">&lt;</span>HTMLElement<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token literal-property property">watermark</span><span class="token operator">:</span> Watermark <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+<span class="token function">onMounted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>containerRef<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 创建水印</span>
+    watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'ID: 12345'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">container</span><span class="token operator">:</span> containerRef<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      <span class="token literal-property property">fontSize</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.15</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">rotate</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">monitor</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">onUnmounted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 清理水印</span>
+  watermark<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.content-area</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 100vh<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="场景-6-在-react-中使用"><a href="#场景-6-在-react-中使用" class="header-anchor">#</a> 场景 6：在 React 中使用</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useEffect<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Watermark <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'xxm-test-js'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">SecureDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> containerRef <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useRef</span><span class="token generic class-name"><span class="token operator">&lt;</span>HTMLDivElement<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> watermarkRef <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useRef</span><span class="token generic class-name"><span class="token operator">&lt;</span>Watermark <span class="token operator">|</span> <span class="token keyword">null</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>containerRef<span class="token punctuation">.</span>current<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 创建水印</span>
+      watermarkRef<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'机密文档'</span><span class="token punctuation">,</span> <span class="token string">'Confidential'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        container<span class="token operator">:</span> containerRef<span class="token punctuation">.</span>current<span class="token punctuation">,</span>
+        fontSize<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+        opacity<span class="token operator">:</span> <span class="token number">0.12</span><span class="token punctuation">,</span>
+        color<span class="token operator">:</span> <span class="token string">'#FF0000'</span><span class="token punctuation">,</span>
+        rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">25</span><span class="token punctuation">,</span>
+        monitor<span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      watermarkRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 清理函数</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      watermarkRef<span class="token punctuation">.</span>current<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div ref<span class="token operator">=</span><span class="token punctuation">{</span>containerRef<span class="token punctuation">}</span> style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> position<span class="token operator">:</span> <span class="token string">'relative'</span><span class="token punctuation">,</span> minHeight<span class="token operator">:</span> <span class="token string">'100vh'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>机密文档<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>这是需要保护的敏感内容<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> SecureDocument<span class="token punctuation">;</span>
+</code></pre></div><h3 id="场景-7-临时水印"><a href="#场景-7-临时水印" class="header-anchor">#</a> 场景 7：临时水印</h3> <p>在某些操作期间临时显示水印。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Watermark <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'xxm-test-js'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> tempWatermark<span class="token operator">:</span> Watermark <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 开始敏感操作时显示水印</span>
+<span class="token keyword">function</span> <span class="token function">startSensitiveOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  tempWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'正在进行敏感操作'</span><span class="token punctuation">,</span> <span class="token string">'请勿截图'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    fontSize<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    opacity<span class="token operator">:</span> <span class="token number">0.3</span><span class="token punctuation">,</span>
+    color<span class="token operator">:</span> <span class="token string">'#FF0000'</span><span class="token punctuation">,</span>
+    fontWeight<span class="token operator">:</span> <span class="token string">'bold'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tempWatermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 操作完成后移除水印</span>
+<span class="token keyword">function</span> <span class="token function">endSensitiveOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  tempWatermark<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  tempWatermark <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 使用示例</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handleSensitiveTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">startSensitiveOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 执行敏感操作</span>
+    <span class="token keyword">await</span> <span class="token function">performTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    <span class="token function">endSensitiveOperation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="场景-8-多实例水印"><a href="#场景-8-多实例水印" class="header-anchor">#</a> 场景 8：多实例水印</h3> <p>在不同容器中创建多个独立的水印。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 为不同区域创建不同的水印</span>
+<span class="token keyword">const</span> headerWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'Header Area'</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.header'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  id<span class="token operator">:</span> <span class="token string">'watermark-header'</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.08</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mainWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Main Content'</span><span class="token punctuation">,</span> <span class="token string">'Confidential'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.main'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  id<span class="token operator">:</span> <span class="token string">'watermark-main'</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.12</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> footerWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'Footer Area'</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.footer'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  id<span class="token operator">:</span> <span class="token string">'watermark-footer'</span><span class="token punctuation">,</span>
+  fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.06</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+headerWatermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mainWatermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+footerWatermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="高级用法"><a href="#高级用法" class="header-anchor">#</a> 高级用法</h2> <h3 id="防删除保护原理"><a href="#防删除保护原理" class="header-anchor">#</a> 防删除保护原理</h3> <p>水印类使用 <code>MutationObserver</code> API 监听 DOM 变化，当检测到水印被删除或修改时，会自动重新创建水印。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 启用防删除保护（默认开启）</span>
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'受保护的水印'</span><span class="token punctuation">,</span>
+  monitor<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 启用监听</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 即使用户通过开发者工具删除水印元素，它也会立即重新出现</span>
+</code></pre></div><h3 id="禁用防删除保护"><a href="#禁用防删除保护" class="header-anchor">#</a> 禁用防删除保护</h3> <p>在某些场景下，你可能希望水印可以被移除：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'普通水印'</span><span class="token punctuation">,</span>
+  monitor<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// 禁用防删除保护</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="自定义容器"><a href="#自定义容器" class="header-anchor">#</a> 自定义容器</h3> <p>为特定元素添加水印：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> myContainer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'my-container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 确保容器有相对或绝对定位</span>
+myContainer<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'relative'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'区域水印'</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> myContainer
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="响应式水印"><a href="#响应式水印" class="header-anchor">#</a> 响应式水印</h3> <p>水印会自动响应容器大小的变化：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'响应式水印'</span><span class="token punctuation">,</span>
+  container<span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.responsive-container'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+watermark<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 当容器大小改变时，水印会自动调整</span>
+</code></pre></div><h2 id="样式定制"><a href="#样式定制" class="header-anchor">#</a> 样式定制</h2> <h3 id="调整密度"><a href="#调整密度" class="header-anchor">#</a> 调整密度</h3> <p>通过调整 <code>width</code> 和 <code>height</code> 来控制水印的密度：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 密集水印</span>
+<span class="token keyword">const</span> denseWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'密集'</span><span class="token punctuation">,</span>
+  width<span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span>
+  height<span class="token operator">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 稀疏水印</span>
+<span class="token keyword">const</span> sparseWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'稀疏'</span><span class="token punctuation">,</span>
+  width<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+  height<span class="token operator">:</span> <span class="token number">250</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="不同颜色主题"><a href="#不同颜色主题" class="header-anchor">#</a> 不同颜色主题</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 浅色主题（深色水印）</span>
+<span class="token keyword">const</span> lightTheme <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'浅色主题'</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'#000000'</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.12</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 深色主题（浅色水印）</span>
+<span class="token keyword">const</span> darkTheme <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'深色主题'</span><span class="token punctuation">,</span>
+  color<span class="token operator">:</span> <span class="token string">'#FFFFFF'</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.08</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="不同旋转角度"><a href="#不同旋转角度" class="header-anchor">#</a> 不同旋转角度</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 逆时针旋转</span>
+<span class="token keyword">const</span> watermark1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'逆时针'</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 顺时针旋转</span>
+<span class="token keyword">const</span> watermark2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'顺时针'</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token number">20</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 水平方向</span>
+<span class="token keyword">const</span> watermark3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'水平'</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="最佳实践"><a href="#最佳实践" class="header-anchor">#</a> 最佳实践</h2> <h3 id="_1-合理设置透明度"><a href="#_1-合理设置透明度" class="header-anchor">#</a> 1. 合理设置透明度</h3> <p>透明度太高会影响阅读体验，太低则失去水印效果。建议范围：0.08 - 0.20。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'推荐透明度'</span><span class="token punctuation">,</span>
+  opacity<span class="token operator">:</span> <span class="token number">0.12</span> <span class="token comment">// 推荐值</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_2-选择合适的旋转角度"><a href="#_2-选择合适的旋转角度" class="header-anchor">#</a> 2. 选择合适的旋转角度</h3> <p>建议使用 -30° 到 -15° 之间的角度，这样既能保证水印效果，又不会太过突兀。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'推荐角度'</span><span class="token punctuation">,</span>
+  rotate<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span> <span class="token comment">// 推荐值</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_3-及时清理资源"><a href="#_3-及时清理资源" class="header-anchor">#</a> 3. 及时清理资源</h3> <p>在组件卸载或页面关闭时，记得调用 <code>destroy()</code> 方法。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// Vue</span>
+<span class="token function">onUnmounted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  watermark<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// React</span>
+<span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    watermark<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_4-确保容器有定位"><a href="#_4-确保容器有定位" class="header-anchor">#</a> 4. 确保容器有定位</h3> <p>水印使用绝对定位，确保容器元素有 <code>position: relative</code> 或 <code>position: absolute</code>。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+container<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'relative'</span><span class="token punctuation">;</span> <span class="token comment">// 重要！</span>
+
+<span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  container<span class="token operator">:</span> container<span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token string">'容器水印'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_5-根据场景调整防删除策略"><a href="#_5-根据场景调整防删除策略" class="header-anchor">#</a> 5. 根据场景调整防删除策略</h3> <ul><li><strong>高安全场景</strong>：启用 <code>monitor: true</code></li> <li><strong>普通场景</strong>：可以禁用 <code>monitor: false</code> 以提高性能</li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 高安全场景</span>
+<span class="token keyword">const</span> secureWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'机密'</span><span class="token punctuation">,</span>
+  monitor<span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 普通场景</span>
+<span class="token keyword">const</span> normalWatermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token string">'普通'</span><span class="token punctuation">,</span>
+  monitor<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h2> <ol><li><strong>性能考虑</strong>：启用 <code>monitor</code> 会持续监听 DOM 变化，在复杂页面中可能影响性能</li> <li><strong>容器定位</strong>：确保容器元素有 <code>position: relative</code> 或 <code>position: absolute</code></li> <li><strong>层级问题</strong>：如果水印被其他元素遮挡，可以调整 <code>zIndex</code> 值</li> <li><strong>移动端兼容</strong>：在移动设备上注意调整字体大小和密度</li> <li><strong>内容长度</strong>：过长的内容可能超出水印范围，建议分多行显示</li> <li><strong>颜色对比</strong>：确保水印颜色与背景有足够的对比度</li></ol> <h2 id="浏览器支持"><a href="#浏览器支持" class="header-anchor">#</a> 浏览器支持</h2> <ul><li>Chrome 51+</li> <li>Firefox 14+</li> <li>Safari 10+</li> <li>Edge 12+</li> <li>Opera 38+</li> <li>IE 11+（MutationObserver 支持）</li></ul> <p>注意：<code>ResizeObserver</code> 在旧版浏览器中可能不支持，会自动降级到 <code>window.resize</code> 事件。</p> <h2 id="常见问题"><a href="#常见问题" class="header-anchor">#</a> 常见问题</h2> <h3 id="q-水印可以被删除吗"><a href="#q-水印可以被删除吗" class="header-anchor">#</a> Q: 水印可以被删除吗？</h3> <p>A: 如果启用了 <code>monitor: true</code>（默认启用），即使用户通过开发者工具删除水印，它也会自动恢复。但这并不能完全防止技术手段的绕过。</p> <h3 id="q-如何让水印不影响页面交互"><a href="#q-如何让水印不影响页面交互" class="header-anchor">#</a> Q: 如何让水印不影响页面交互？</h3> <p>A: 水印使用 <code>pointer-events: none</code> 样式，不会影响页面的点击和交互。</p> <h3 id="q-可以在特定元素上添加水印吗"><a href="#q-可以在特定元素上添加水印吗" class="header-anchor">#</a> Q: 可以在特定元素上添加水印吗？</h3> <p>A: 可以，通过 <code>container</code> 选项指定目标元素即可。</p> <h3 id="q-水印会影响页面性能吗"><a href="#q-水印会影响页面性能吗" class="header-anchor">#</a> Q: 水印会影响页面性能吗？</h3> <p>A: 水印使用 Canvas 生成 base64 图片，性能影响很小。但启用 <code>monitor</code> 会持续监听 DOM，在复杂页面可能有轻微影响。</p> <h3 id="q-如何实现多种语言的水印"><a href="#q-如何实现多种语言的水印" class="header-anchor">#</a> Q: 如何实现多种语言的水印？</h3> <p>A: 直接在 <code>content</code> 中使用对应语言的文字即可，支持中文、英文、日文等。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> watermark <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watermark</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Confidential'</span><span class="token punctuation">,</span> <span class="token string">'机密'</span><span class="token punctuation">,</span> <span class="token string">'秘密'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  fontFamily<span class="token operator">:</span> <span class="token string">'Arial, Microsoft YaHei, sans-serif'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="许可证"><a href="#许可证" class="header-anchor">#</a> 许可证</h2> <p>MIT</p> <h2 id="相关链接"><a href="#相关链接" class="header-anchor">#</a> 相关链接</h2> <ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="noopener noreferrer">Canvas API<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver" target="_blank" rel="noopener noreferrer">MutationObserver<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver" target="_blank" rel="noopener noreferrer">ResizeObserver<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/xxm-test-js/zh/WebSocketClient.html" class="prev">
+        WebSocketClient - WebSocket 客户端封装类
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/xxm-test-js/assets/js/app.129d9e4b.js" defer></script><script src="/xxm-test-js/assets/js/2.4470ce03.js" defer></script><script src="/xxm-test-js/assets/js/1.adb73c09.js" defer></script><script src="/xxm-test-js/assets/js/26.21d4d4df.js" defer></script>
+  </body>
+</html>
