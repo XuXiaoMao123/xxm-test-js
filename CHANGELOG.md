@@ -25,6 +25,23 @@
 
 ---
 
+## [1.2.26] - 2025-12
+
+### 修复
+
+- 全面修复 `FormValidator` 中的 TypeScript 类型声明和表单校验规则中的 `unknown` 使用问题
+- 修复 `WebSocketClient` 类型定义与事件回调中的 `any` 使用，增强错误处理和消息队列类型安全
+- 修复 `deepCopy`、`filterObject` 中的 `no-prototype-builtins` 报错
+- 修复 `cssEscape`、`jsEscape` 等工具函数中的正则转义和 `no-useless-escape` 报错
+- 修复 `throttle` 等工具函数中的 `no-explicit-any`、`no-empty-object-type`、`no-this-alias` 等 ESLint 报错
+
+### 改进
+
+- 提升整体 TypeScript 类型安全，减少 `any` 使用
+- 改进代码风格与工具配置，使之更符合 ESLint/Prettier 约定
+
+---
+
 ## [1.2.24] - 2024-10
 
 ### 新增
