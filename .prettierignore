@@ -1,0 +1,17 @@
+# 依赖
+node_modules
+
+# 构建产物
+dist
+docs/.vuepress/dist
+
+# 日志
+*.log
+npm-debug.log*
+
+# 其他
+.DS_Store
+*.swp
+coverage
+.nyc_output
+

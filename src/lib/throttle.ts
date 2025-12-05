@@ -1,47 +1,63 @@
 /**
  * 创建一个节流函数，该函数会在最后一次调用后的指定时间后停止执行。
  * Copyright (c) 2024 xxm
- * 
+ *
  * @param func - 需要节流的函数。
  * @param limit - 节流的时间间隔，单位是毫秒。
  * @returns 一个新的函数，该函数会在节流时间内限制原函数的执行。
  * @example
- * 
- * ```js
- * // 示例：处理滚动事件
- * function handleScroll() {
- *     console.log('页面正在滚动...');
- *     // 在这里可以执行一些操作，例如更新页面上的某些元素，
- *     // 计算滚动位置等。
- * }
+ * ```vue
+ * <template>
+ *   <div id="app"></div>
+ * </template>
  *
- * // 使用 throttle 包装 handleScroll 函数，设置节流时间为 200 毫秒
- * const throttledHandleScroll = throttle(handleScroll, 200);
+ * <script>
+ * import { throttle } from 'xxm-test-js';
  *
- * // 绑定到窗口的 scroll 事件上
- * window.addEventListener('scroll', throttledHandleScroll);
+ * export default {
+ *   name: 'App',
+ *   data() {
+ *     return {
+ *       throttledHandleScroll: null
+ *     }
+ *   },
+ *   methods: {
+ *     handleScroll() {
+ *       console.log('页面正在滚动...');
+ *     }
+ *   },
+ *   mounted() {
+ *     this.throttledHandleScroll = throttle(this.handleScroll, 200);
+ *     window.addEventListener('scroll', this.throttledHandleScroll);
+ *   },
+ *   beforeDestroy() {
+ *     window.removeEventListener('scroll', this.throttledHandleScroll);
+ *   }
+ * };
+ * </script>
  * ```
  */
-export function throttle<T extends (...args: any[]) => void, C extends {} = any>(func: T, limit: number): (this: C, ...args: Parameters<T>) => void {
-    let lastFunc: number | null = null;
-    let lastRan: number = 0;
+type ThrottleFunction<T extends unknown[]> = (...args: T) => void;
 
-    return function(this: C, ...args: Parameters<T>) {
-        const context = this;
-        const time = Date.now();
+export function throttle<T extends unknown[]>(
+  func: (...args: T) => void,
+  limit: number
+): ThrottleFunction<T> {
+  let lastFunc: NodeJS.Timeout | null = null;
+  let lastRan = 0;
 
-        if (!lastFunc || (time - lastRan >= limit)) {
-            func.apply(context, args);
-            lastRan = time;
-            lastFunc = null;
-        } else {
-            if (lastFunc) {
-                clearTimeout(lastFunc);
-            }
-            lastFunc = setTimeout(() => {
-                func.apply(context, args);
-                lastRan = time;
-            }, limit);
-        }
-    };
+  return function(...args: T) {
+    const time = Date.now();
+    if (time - lastRan >= limit) {
+      func(...args);
+      lastRan = time;
+      lastFunc = null;
+    } else if (lastFunc === null) {
+      lastFunc = setTimeout(() => {
+        func(...args);
+        lastRan = Date.now();
+        lastFunc = null;
+      }, limit - (time - lastRan));
+    }
+  };
 }

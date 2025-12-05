@@ -1,7 +1,7 @@
 /**
  * 将嵌套数组展平成一维数组。
  * Copyright (c) 2024 xxm
- * 
+ *
  * @param arr - 需要展平的嵌套数组。
  * @returns 展平后的一维数组。
  * @example
@@ -12,7 +12,7 @@
  * ```
  */
 export function flattenArray(arr: any[]): any[] {
-    return arr.reduce((acc: any[], val: any): any[] => {
-        return Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val);
-    }, []);
+  return arr.reduce((acc: any[], val: any): any[] => {
+    return Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val);
+  }, []);
 }

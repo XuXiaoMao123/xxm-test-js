@@ -56,10 +56,10 @@ window.addEventListener('scroll', throttledHandleScroll);
 
 - 节流函数是一个强大的工具，它可以帮助我们在处理连续触发的事件时限制函数的执行频率，从而避免性能问题和不必要的计算。
 
-## 安装
-- 要在使用的项目中使用 isType 函数，您可以单独安装：
+## 引入
+- 要在使用的项目中使用 `throttle` 函数，您可以单独引入：
 ```js
-import { throttle } from 'xxm-test-js/dist/lib/throttle.js';
+import { throttle } from 'xxm-test-js';
 ```
 
 ## 贡献

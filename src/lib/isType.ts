@@ -21,23 +21,16 @@
  * ```
  */
 export function isType(type: string): (obj: any) => boolean {
-    return function(obj: any): boolean {
-        switch (type) {
-            case 'array':
-                return Array.isArray(obj);
-            case 'null':
-                return obj === null;
-            case 'object':
-                return obj !== null && typeof obj === 'object' && !Array.isArray(obj);
-            default:
-                return typeof obj === type;
-        }
-    };
+  return function (obj: any): boolean {
+    switch (type) {
+      case 'array':
+        return Array.isArray(obj);
+      case 'null':
+        return obj === null;
+      case 'object':
+        return obj !== null && typeof obj === 'object' && !Array.isArray(obj);
+      default:
+        return typeof obj === type;
+    }
+  };
 }
-
-
-
-
-
-
-

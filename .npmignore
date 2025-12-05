@@ -1,0 +1,54 @@
+# 源代码
+src/
+
+# 测试
+tests/
+__tests__/
+*.test.ts
+*.spec.ts
+
+# 文档
+docs/
+*.md
+!README.md
+
+# 配置文件
+tsconfig.json
+.editorconfig
+.eslintrc*
+.prettierrc*
+.gitignore
+.npmignore
+
+# CI/CD
+.github/
+
+# 开发相关
+node_modules/
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts
+deploy.sh
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 临时文件
+.tmp/
+temp/
+

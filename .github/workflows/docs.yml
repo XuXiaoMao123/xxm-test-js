@@ -1,0 +1,37 @@
+name: 部署文档
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy-docs:
+    name: 构建并部署文档
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout 代码
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    
+    - name: 安装依赖
+      run: npm ci
+    
+    - name: 构建文档
+      run: npm run docs:build
+    
+    - name: 部署到 GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/.vuepress/dist
+        cname: # 如果有自定义域名，在此填写
+

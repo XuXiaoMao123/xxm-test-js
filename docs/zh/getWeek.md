@@ -13,7 +13,7 @@
 ```typescript
 /**
  * 获取指定日期所在的周数（符合中国的周定义，即周一作为一周的开始）。
- * 
+ *
  * @param {string | Date} [nowDay=new Date()] - 传入一个具体的日期或日期字符串。默认为当前日期。
  * @returns {number} 返回一个数字，表示指定日期是一年中的第几周。
  */
@@ -51,10 +51,12 @@ console.log(`指定日期对象是一年中的第 ${specificWeekNumberFromObject
 
 - 获取周数函数是一个实用的工具，它可以帮助我们确定任何给定日期在中国周定义下是一年中的第几周，这对于许多需要周次信息的应用非常有用。
 
-## 安装
+## 引入
+
+- 要在使用的项目中使用 `getWeek` 函数，您可以单独引入：
 
 ```js
-import { getWeek } from 'xxm-test-js/dist/lib/getWeek.js';
+import { getWeek } from 'xxm-test-js';
 ```
 
 ## 贡献

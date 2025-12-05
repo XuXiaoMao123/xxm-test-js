@@ -13,7 +13,7 @@
 ```typescript
 /**
  * 创建一个函数来检查对象是否为指定的类型。
- * 
+ *
  * @param type 要检查的类型，可以是 'array', 'null', 'object' 或者其他基本类型。
  * @returns 返回一个函数，该函数接受一个对象并返回一个布尔值，指示对象是否为指定类型。
  */
@@ -33,7 +33,7 @@ export declare function isType(type: string): (obj: any) => boolean;
 ```js
 // 使用示例
 const isString = isType('string');
-console.log(isString("Hello")); // 输出：true
+console.log(isString('Hello')); // 输出：true
 
 const isArray = isType('array');
 console.log(isArray([1, 2, 3])); // 输出：true
@@ -54,11 +54,14 @@ console.log(isObject({})); // 输出：true
 
 - 类型检查函数是一个灵活的工具，它允许我们快速创建类型检查器，以验证对象是否符合预期的数据类型，这对于确保代码的健壮性和正确性非常重要。
 
-## 安装
-- 要在使用的项目中使用 isType 函数，您可以单独安装：
+## 引入
+
+- 要在使用的项目中使用 `isType` 函数，您可以单独引入：
+
 ```js
-import { isType } from 'xxm-test-js/dist/lib/isType.js';
+import { isType } from 'xxm-test-js';
 ```
 
 ## 贡献
+
 - 希望这个文档对你有所帮助！如果有任何问题或需要进一步的信息，请随时联系。

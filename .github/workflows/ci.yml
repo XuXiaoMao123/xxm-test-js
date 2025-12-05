@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test on Node.js ${{ matrix.node-version }}
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 20.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - name: Checkout 代码
+      uses: actions/checkout@v3
+    
+    - name: 设置 Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: 安装依赖
+      run: npm ci
+    
+    - name: 编译 TypeScript
+      run: npm run build
+    
+    # 待测试框架完善后启用
+    # - name: 运行测试
+    #   run: npm test
+    
+    # - name: 生成测试覆盖率报告
+    #   run: npm run coverage
+    
+    # - name: 上传覆盖率报告到 Codecov
+    #   uses: codecov/codecov-action@v3
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+
+  lint:
+    name: 代码质量检查
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout 代码
+      uses: actions/checkout@v3
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    
+    - name: 安装依赖
+      run: npm ci
+    
+    # 待 ESLint 配置完成后启用
+    # - name: 运行 ESLint
+    #   run: npm run lint
+    
+    # - name: 运行 TypeScript 类型检查
+    #   run: npm run type-check
+    
+    - name: 检查构建
+      run: npm run build
+
+  build:
+    name: 构建检查
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout 代码
+      uses: actions/checkout@v3
+    
+    - name: 设置 Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    
+    - name: 安装依赖
+      run: npm ci
+    
+    - name: 构建项目
+      run: npm run build
+    
+    - name: 检查构建产物
+      run: |
+        test -f dist/index.js || exit 1
+        test -f dist/index.d.ts || exit 1
+        echo "构建产物检查通过"
+
