@@ -13,12 +13,15 @@
 ```typescript
 /**
  * 创建一个节流函数，该函数会在最后一次调用后的指定时间后停止执行。
- * 
+ *
  * @param func - 需要节流的函数。
  * @param limit - 节流的时间间隔，单位是毫秒。
  * @returns 一个新的函数，该函数会在节流时间内限制原函数的执行。
  */
-export declare function throttle<T extends (...args: any[]) => void, C extends {} = any>(func: T, limit: number): (this: C, ...args: Parameters<T>) => void;
+export declare function throttle<T extends (...args: any[]) => void, C extends {} = any>(
+  func: T,
+  limit: number
+): (this: C, ...args: Parameters<T>) => void;
 ```
 
 ## 参数
@@ -35,9 +38,9 @@ export declare function throttle<T extends (...args: any[]) => void, C extends {
 ```js
 // 示例：处理滚动事件
 function handleScroll() {
-    console.log('页面正在滚动...');
-    // 在这里可以执行一些操作，例如更新页面上的某些元素，
-    // 计算滚动位置等。
+  console.log('页面正在滚动...');
+  // 在这里可以执行一些操作，例如更新页面上的某些元素，
+  // 计算滚动位置等。
 }
 
 // 使用 throttle 包装 handleScroll 函数，设置节流时间为 200 毫秒
@@ -57,10 +60,13 @@ window.addEventListener('scroll', throttledHandleScroll);
 - 节流函数是一个强大的工具，它可以帮助我们在处理连续触发的事件时限制函数的执行频率，从而避免性能问题和不必要的计算。
 
 ## 引入
+
 - 要在使用的项目中使用 `throttle` 函数，您可以单独引入：
+
 ```js
 import { throttle } from 'xxm-test-js';
 ```
 
 ## 贡献
+
 - 希望这个文档对你有所帮助！如果有任何问题或需要进一步的信息，请随时联系。

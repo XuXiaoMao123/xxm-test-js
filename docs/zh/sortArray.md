@@ -14,7 +14,7 @@
 /**
  * 通用排序函数
  * 对普通数组或对象数组根据指定字段进行升序或降序排序
- * 
+ *
  * @param {Array<any>} array - 要排序的数组
  * @param {string} [order='asc'] - 排序顺序，'asc' 表示升序，'desc' 表示降序
  * @param {string|null} [field=null] - 对象数组中用于排序的字段名，如果是普通数组则为null
@@ -22,10 +22,10 @@
  * @returns {Array<any>} - 排序后的数组
  */
 export declare function sortArray<T>(
-    array: T[], 
-    order?: 'asc' | 'desc', 
-    field?: keyof T | null,
-    numericStrings?: boolean
+  array: T[],
+  order?: 'asc' | 'desc',
+  field?: keyof T | null,
+  numericStrings?: boolean
 ): T[];
 ```
 
@@ -51,7 +51,7 @@ console.log(sortArray(numbers)); // 升序排序 [1, 1, 2, 3, 4, 5, 6, 9]
 console.log(sortArray(numbers, 'desc')); // 降序排序 [9, 6, 5, 4, 3, 2, 1, 1]
 
 // 字符串数组排序
-const strings = ["banana", "apple", "orange"];
+const strings = ['banana', 'apple', 'orange'];
 console.log(sortArray(strings)); // 字典序升序排序 ["apple", "banana", "orange"]
 console.log(sortArray(strings, 'desc')); // 字典序降序排序 ["orange", "banana", "apple"]
 ```
@@ -60,11 +60,11 @@ console.log(sortArray(strings, 'desc')); // 字典序降序排序 ["orange", "ba
 
 ```js
 // 字符串数字排序
-const stringNumbers = ["10", "2", "1", "21"];
-console.log(sortArray(stringNumbers)); 
+const stringNumbers = ['10', '2', '1', '21'];
+console.log(sortArray(stringNumbers));
 // 字典序升序排序 ["1", "10", "2", "21"]
 
-console.log(sortArray(stringNumbers, 'asc', null, true)); 
+console.log(sortArray(stringNumbers, 'asc', null, true));
 // 数值升序排序 ["1", "2", "10", "21"]
 ```
 
@@ -72,8 +72,8 @@ console.log(sortArray(stringNumbers, 'asc', null, true));
 
 ```js
 // 混合类型排序（数字和字符串数字）
-const mixedValues = [5, "10", 1, "2"];
-console.log(sortArray(mixedValues, 'asc', null, true)); 
+const mixedValues = [5, '10', 1, '2'];
+console.log(sortArray(mixedValues, 'asc', null, true));
 // 数值升序排序 [1, "2", 5, "10"]
 ```
 
@@ -81,23 +81,23 @@ console.log(sortArray(mixedValues, 'asc', null, true));
 
 ```js
 interface User {
-    name: string;
-    age: number | string; // 年龄可能是数字或字符串
-    score: string; // 分数存储为字符串
+  name: string;
+  age: number | string; // 年龄可能是数字或字符串
+  score: string; // 分数存储为字符串
 }
 
 const users: User[] = [
-    { name: "John", age: 30, score: "100" },
-    { name: "Alice", age: "25", score: "85" },
-    { name: "Bob", age: 28, score: "120" }
+  { name: 'John', age: 30, score: '100' },
+  { name: 'Alice', age: '25', score: '85' },
+  { name: 'Bob', age: 28, score: '120' },
 ];
 
 // 根据年龄升序排序（混合类型）
-console.log(sortArray(users, 'asc', 'age', true)); 
+console.log(sortArray(users, 'asc', 'age', true));
 // 输出: [{ name: "Alice", age: "25", score: "85" }, { name: "Bob", age: 28, score: "120" }, { name: "John", age: 30, score: "100" }]
 
 // 根据分数（字符串数字）升序排序
-console.log(sortArray(users, 'asc', 'score', true)); 
+console.log(sortArray(users, 'asc', 'score', true));
 // 输出: [{ name: "Alice", age: "25", score: "85" }, { name: "John", age: 30, score: "100" }, { name: "Bob", age: 28, score: "120" }]
 
 // 根据姓名字典序降序排序
@@ -127,9 +127,11 @@ console.log(sortArray(users, 'desc', 'name'));
 ## 引入
 
 要在使用的项目中使用 `sortArray` 函数，您可以单独引入：
+
 ```js
 import { sortArray } from 'xxm-test-js';
 ```
 
 ## 贡献
+
 希望这个文档对你有所帮助！如果有任何问题或需要进一步的信息，请随时联系。

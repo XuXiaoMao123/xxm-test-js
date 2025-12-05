@@ -18,7 +18,10 @@
  * @param concurrency - 允许的最大并发数。
  * @returns 返回一个包含所有任务结果的 Promise 数组。
  */
-export async function runTasksWithConcurrency<T>(tasks: (() => Promise<T>)[], concurrency: number): Promise<T[]>;
+export async function runTasksWithConcurrency<T>(
+  tasks: (() => Promise<T>)[],
+  concurrency: number
+): Promise<T[]>;
 ```
 
 ## 参数
@@ -34,14 +37,14 @@ export async function runTasksWithConcurrency<T>(tasks: (() => Promise<T>)[], co
 
 ```js
 // 使用示例
-const task1 = () => new Promise(resolve => setTimeout(() => resolve('Task 1'), 1000));
-const task2 = () => new Promise(resolve => setTimeout(() => resolve('Task 2'), 500));
-const task3 = () => new Promise(resolve => setTimeout(() => resolve('Task 3'), 750));
+const task1 = () => new Promise((resolve) => setTimeout(() => resolve('Task 1'), 1000));
+const task2 = () => new Promise((resolve) => setTimeout(() => resolve('Task 2'), 500));
+const task3 = () => new Promise((resolve) => setTimeout(() => resolve('Task 3'), 750));
 
 async function execute() {
-    const tasks = [task1, task2, task3];
-    const results = await runTasksWithConcurrency(tasks, 2); // 最大并发数为2
-    console.log(results); // 输出：['Task 2', 'Task 3', 'Task 1']
+  const tasks = [task1, task2, task3];
+  const results = await runTasksWithConcurrency(tasks, 2); // 最大并发数为2
+  console.log(results); // 输出：['Task 2', 'Task 3', 'Task 1']
 }
 
 execute();
@@ -57,10 +60,13 @@ execute();
 - `runTasksWithConcurrency` 是一个有效的工具，可以在并发执行多个异步任务的同时，确保不会超过指定的并发限制。这对于网络请求、文件读写等可能消耗大量资源的操作特别有用。
 
 ## 引入
+
 - 要在使用的项目中使用 `runTasksWithConcurrency` 函数，您可以单独引入：
+
 ```js
 import { runTasksWithConcurrency } from 'xxm-test-js';
 ```
 
 ## 贡献
+
 - 希望这个文档对你有所帮助！如果有任何问题或需要进一步的信息，请随时联系。

@@ -70,7 +70,13 @@ interface WebSocketClientOptions {
 
 type EventType = 'open' | 'close' | 'message' | 'error' | 'reconnect';
 type WebSocketMessage = string | object | ArrayBuffer | Blob | ArrayBufferView;
-type EventCallbackData = WebSocketMessage | Event | CloseEvent | MessageEvent | { attempt: number } | undefined;
+type EventCallbackData =
+  | WebSocketMessage
+  | Event
+  | CloseEvent
+  | MessageEvent
+  | { attempt: number }
+  | undefined;
 type EventCallback = (data?: EventCallbackData) => void;
 
 class WebSocketClient {

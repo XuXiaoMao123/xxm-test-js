@@ -17,7 +17,10 @@
  * @param {ScrollToOptions} [options={ top: 0, behavior: 'smooth' }] - 滚动选项。
  * @returns {Promise<void>} - 滚动完成的Promise。
  */
-export function scrollToTop(container: HTMLElement | Window = window, options: ScrollToOptions = { top: 0, behavior: 'smooth' }): Promise<void>
+export function scrollToTop(
+  container: HTMLElement | Window = window,
+  options: ScrollToOptions = { top: 0, behavior: 'smooth' }
+): Promise<void>;
 ```
 
 ## 参数
@@ -61,6 +64,7 @@ scrollToTop(element).then(() => {
 ## 引入
 
 要在使用的项目中使用 `scrollToTop` 函数，您可以单独引入：
+
 ```js
 import { scrollToTop } from 'xxm-test-js';
 ```

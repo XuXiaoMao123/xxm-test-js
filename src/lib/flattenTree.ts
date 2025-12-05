@@ -91,7 +91,12 @@ export function flattenTree<T extends Record<string, any>>(
   options: FlattenTreeOptions<T> = {}
 ): Array<Omit<TreeNode<T>, keyof T>> {
   // Prefix with _ to indicate these are intentionally unused
-  const { idKey: _idKey = 'id', parentIdKey: _parentIdKey = 'parentId', childrenKey = 'children', filter } = options;
+  const {
+    idKey: _idKey = 'id',
+    parentIdKey: _parentIdKey = 'parentId',
+    childrenKey = 'children',
+    filter,
+  } = options;
   const result: Array<Omit<TreeNode<T>, keyof T>> = [];
   const stack: Array<TreeNode<T>> = Array.isArray(tree) ? [...tree] : [tree];
 

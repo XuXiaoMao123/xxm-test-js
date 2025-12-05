@@ -46,7 +46,7 @@ export function throttle<T extends unknown[]>(
   let lastFunc: NodeJS.Timeout | null = null;
   let lastRan = 0;
 
-  return function(...args: T) {
+  return function (...args: T) {
     const time = Date.now();
     if (time - lastRan >= limit) {
       func(...args);

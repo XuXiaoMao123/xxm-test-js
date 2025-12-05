@@ -14,7 +14,7 @@
 /**
  * 数组去重函数
  * 对数组进行去重操作，支持基本类型和对象类型
- * 
+ *
  * @template T - 数组元素的类型
  * @param {T[]} array - 需要去重的数组
  * @param {string|((a: T, b: T) => boolean)} [comparison] - 可选的比较参数
@@ -23,8 +23,8 @@
  * @returns {T[]} - 去重后的新数组
  */
 export declare function uniqueArray<T>(
-    array: T[], 
-    comparison?: string | ((a: T, b: T) => boolean)
+  array: T[],
+  comparison?: string | ((a: T, b: T) => boolean)
 ): T[];
 ```
 
@@ -68,16 +68,16 @@ console.log(uniqueArray(withNaN)); // 输出: [1, NaN, 2, 3]（只保留一个Na
 const users = [
   { id: 1, name: '张三' },
   { id: 2, name: '李四' },
-  { id: 1, name: '张三' }
+  { id: 1, name: '张三' },
 ];
-console.log(uniqueArray(users, 'id')); 
+console.log(uniqueArray(users, 'id'));
 // 输出: [{ id: 1, name: '张三' }, { id: 2, name: '李四' }]
 
 // 通过对象的name属性去重
 const products = [
   { id: 1, name: '苹果', price: 5 },
   { id: 2, name: '香蕉', price: 3 },
-  { id: 3, name: '苹果', price: 6 }
+  { id: 3, name: '苹果', price: 6 },
 ];
 console.log(uniqueArray(products, 'name'));
 // 输出: [{ id: 1, name: '苹果', price: 5 }, { id: 2, name: '香蕉', price: 3 }]
@@ -91,7 +91,7 @@ const customCompare = (a, b) => a.name === b.name;
 const users = [
   { id: 1, name: '张三' },
   { id: 2, name: '李四' },
-  { id: 3, name: '张三' }
+  { id: 3, name: '张三' },
 ];
 console.log(uniqueArray(users, customCompare));
 // 输出: [{ id: 1, name: '张三' }, { id: 2, name: '李四' }]
@@ -100,9 +100,9 @@ console.log(uniqueArray(users, customCompare));
 const complexUsers = [
   { id: 1, profile: { age: 25, city: '北京' } },
   { id: 2, profile: { age: 30, city: '上海' } },
-  { id: 3, profile: { age: 25, city: '北京' } }
+  { id: 3, profile: { age: 25, city: '北京' } },
 ];
-const complexCompare = (a, b) => 
+const complexCompare = (a, b) =>
   a.profile.age === b.profile.age && a.profile.city === b.profile.city;
 console.log(uniqueArray(complexUsers, complexCompare));
 // 输出: [{ id: 1, profile: { age: 25, city: '北京' } }, { id: 2, profile: { age: 30, city: '上海' } }]
