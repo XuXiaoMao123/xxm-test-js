@@ -40,7 +40,7 @@ import { scrollToTop } from './lib/scrollToTop';
 import { scrollToBottom } from './lib/scrollToBottom';
 import { ScrollDirectionChecker } from './lib/ScrollDirectionChecker';
 import { FormValidator } from './lib/FormValidator';
-import { deepMerge } from './lib/merge';
+import { deepMerge } from './lib/deepMerge';
 import { WebSocketClient } from './lib/WebSocketClient';
 import { Watermark } from './lib/Watermark';
 

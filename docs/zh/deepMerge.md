@@ -2,7 +2,7 @@
 
 ## 概述
 
-`deepMerge` 函数用于递归合并两个对象。它能够深度合并嵌套的对象结构，并保持类型安全。该函数不会修改原始对象，而是返回一个新的合并后的对象。
+`deepMerge` 函数用于递归合并两个或多个对象。它能够深度合并嵌套的对象结构，并保持类型安全。该函数不会修改原始对象，而是返回一个新的合并后的对象。
 
 ## 版权信息
 
@@ -11,27 +11,48 @@
 ## 函数签名
 
 ```typescript
+type PlainObject = Record<string, unknown>;
+
+type DeepMerge<T, U> = {
+  [K in keyof T | keyof U]: K extends keyof U
+    ? K extends keyof T
+      ? T[K] extends PlainObject
+        ? U[K] extends PlainObject
+          ? DeepMerge<T[K], U[K]>
+          : U[K]
+        : U[K]
+      : U[K]
+    : K extends keyof T
+    ? T[K]
+    : never;
+};
+
 /**
- * 递归合并两个对象。
+ * 递归合并两个或多个对象
  *
- * @param target - 目标对象，作为合并的基础。
- * @param source - 源对象，其属性将合并到目标对象中。
- * @returns 返回一个新的合并后的对象。
+ * @param target - 目标对象，作为合并的基础
+ * @param source - 源对象，其属性将合并到目标对象中
+ * @param sources - 更多源对象（可选），支持合并多个对象
+ * @returns 返回一个新的合并后的对象，类型经过精确推断
  */
-function deepMerge<T extends Record<string, any>, U extends Record<string, any>>(
+function deepMerge<T extends PlainObject, U extends PlainObject>(
   target: T,
-  source: U
-): T & U;
+  source: U,
+  ...sources: PlainObject[]
+): DeepMerge<T, U>;
 ```
 
 ## 参数
 
-- `target`: 目标对象，作为合并的基础。
-- `source`: 源对象，其属性将合并到目标对象中。
+- `target` (必需): 目标对象，作为合并的基础
+- `source` (必需): 源对象，其属性将合并到目标对象中
+- `...sources` (可选): 更多源对象，支持一次合并多个对象
 
 ## 返回值
 
-- 返回一个新的对象，类型为 `T & U`（目标对象和源对象的类型交集）。
+- 返回一个新的对象，类型为 `DeepMerge<T, U>`，通过条件类型精确推断合并后的结构
+- 源对象的属性会覆盖目标对象的同名属性
+- 嵌套对象会进行深度递归合并
 
 ## 示例用法
 
