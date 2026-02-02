@@ -1,6 +1,6 @@
 {
   "name": "xxm-test-js",
-  "version": "1.2.27",
+  "version": "1.2.28",
   "description": "xxm-js通用js工具(utils)库",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

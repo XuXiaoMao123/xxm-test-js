@@ -9,9 +9,9 @@
  * console.log(cleanedArray); // 输出: [1, 'text', [], {}, 42]
  * ```
  */
-export function cleanArray(arr: any[]): any[] {
-  return arr.reduce((acc: any[], val: any): any[] => {
+export function cleanArray<T>(arr: T[]): NonNullable<T>[] {
+  return arr.reduce((acc: NonNullable<T>[], val: T): NonNullable<T>[] => {
     // 如果值为真值，则添加到累加器中
-    return val ? acc.concat(val) : acc;
+    return val ? acc.concat(val as NonNullable<T>) : acc;
   }, []);
 }
