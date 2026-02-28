@@ -15,11 +15,12 @@
  * 通用排序函数
  * 对普通数组或对象数组根据指定字段进行升序或降序排序
  *
- * @param {Array<any>} array - 要排序的数组
- * @param {string} [order='asc'] - 排序顺序，'asc' 表示升序，'desc' 表示降序
- * @param {string|null} [field=null] - 对象数组中用于排序的字段名，如果是普通数组则为null
+ * @template T - 数组元素类型（可以是基本类型或对象）
+ * @param {Array<T>} array - 要排序的数组
+ * @param {'asc' | 'desc'} [order='asc'] - 排序顺序，'asc' 表示升序，'desc' 表示降序
+ * @param {keyof T | null} [field=null] - 对象数组中用于排序的字段名，如果是普通数组则为 null
  * @param {boolean} [numericStrings=false] - 是否将字符串作为数字处理（如果可能）
- * @returns {Array<any>} - 排序后的数组
+ * @returns {Array<T>} - 排序后的数组
  */
 export declare function sortArray<T>(
   array: T[],

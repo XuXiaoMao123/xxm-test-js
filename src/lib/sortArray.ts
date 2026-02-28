@@ -3,11 +3,12 @@
  * 对普通数组或对象数组根据指定字段进行升序或降序排序
  * Copyright (c) 2024 xxm
  *
- * @param {Array<any>} array - 要排序的数组
- * @param {string} [order='asc'] - 排序顺序，'asc' 表示升序，'desc' 表示降序
- * @param {string|null} [field=null] - 对象数组中用于排序的字段名，如果是普通数组则为null
+ * @template T - 数组元素类型（可以是基本类型或对象）
+ * @param {Array<T>} array - 要排序的数组
+ * @param {'asc' | 'desc'} [order='asc'] - 排序顺序，'asc' 表示升序，'desc' 表示降序
+ * @param {keyof T | null} [field=null] - 对象数组中用于排序的字段名，如果是普通数组则为 null
  * @param {boolean} [numericStrings=false] - 是否将字符串作为数字处理（如果可能）
- * @returns {Array<any>} - 排序后的数组
+ * @returns {Array<T>} - 排序后的数组
  * @example
  *
  * ```js
@@ -50,89 +51,99 @@
  * // 输出: [{ name: "Alice", age: "25", score: "85" }, { name: "John", age: 30, score: "100" }, { name: "Bob", age: 28, score: "120" }]
  * ```
  */
+export function sortArray<T extends string | number | boolean | bigint>(
+  array: T[],
+  order?: 'asc' | 'desc',
+  field?: null,
+  numericStrings?: boolean
+): T[];
+export function sortArray<T extends Record<string, unknown>, K extends keyof T>(
+  array: T[],
+  order?: 'asc' | 'desc',
+  field?: K,
+  numericStrings?: boolean
+): T[];
 export function sortArray<T>(
   array: T[],
   order: 'asc' | 'desc' = 'asc',
   field: keyof T | null = null,
   numericStrings: boolean = false
 ): T[] {
-  return array.sort((a, b) => {
+  // 辅助：尝试将未知值解析为数字，失败返回 null
+  const toNumber = (v: unknown): number | null => {
+    if (typeof v === 'number') return v;
+    if (typeof v === 'string') {
+      const s = v.trim();
+      if (s === '') return null;
+      const n = Number(s);
+      return Number.isNaN(n) ? null : n;
+    }
+    return null;
+  };
+
+  // 辅助：安全获取对象字段值（不使用 any）
+  const getField = (obj: unknown, key: keyof T | null): unknown => {
+    if (key === null) return obj;
+    if (obj !== null && typeof obj === 'object') {
+      return (obj as Record<PropertyKey, unknown>)[key as PropertyKey];
+    }
+    return undefined;
+  };
+
+  return array.sort((aa, bb) => {
+    const a = aa as unknown;
+    const b = bb as unknown;
     let comparison = 0;
 
     if (field === null) {
       // 普通数组排序
       if (numericStrings) {
-        // 如果启用了数字字符串处理
-        const aNum =
-          typeof a === 'number' ? a : typeof a === 'string' && !isNaN(Number(a)) ? Number(a) : NaN;
-        const bNum =
-          typeof b === 'number' ? b : typeof b === 'string' && !isNaN(Number(b)) ? Number(b) : NaN;
+        const aNum = toNumber(a);
+        const bNum = toNumber(b);
 
-        if (!isNaN(aNum) && !isNaN(bNum)) {
-          // 两者都可以转换为数字
+        if (aNum !== null && bNum !== null) {
           comparison = aNum - bNum;
         } else if (typeof a === 'string' && typeof b === 'string') {
-          // 如果都是字符串但不能转换为数字，使用字符串比较
           comparison = a.localeCompare(b);
         } else {
-          // 其他情况，转换为字符串比较
           comparison = String(a).localeCompare(String(b));
         }
       } else {
-        // 不启用数字字符串处理
         if (typeof a === 'number' && typeof b === 'number') {
-          comparison = a - b; // 数字排序
+          comparison = a - b;
         } else if (typeof a === 'string' && typeof b === 'string') {
-          comparison = a.localeCompare(b); // 字符串排序
+          comparison = a.localeCompare(b);
         } else {
-          // 混合类型，转换为字符串比较
           comparison = String(a).localeCompare(String(b));
         }
       }
     } else {
-      // 对象数组，根据字段进行排序
-      const aValue = (a as any)[field];
-      const bValue = (b as any)[field];
+      // 对象数组，根据字段进行排序（使用 unknown/Record 替代 any）
+      const aValue = getField(a, field);
+      const bValue = getField(b, field);
 
       if (numericStrings) {
-        // 如果启用了数字字符串处理
-        const aNum =
-          typeof aValue === 'number'
-            ? aValue
-            : typeof aValue === 'string' && !isNaN(Number(aValue))
-            ? Number(aValue)
-            : NaN;
-        const bNum =
-          typeof bValue === 'number'
-            ? bValue
-            : typeof bValue === 'string' && !isNaN(Number(bValue))
-            ? Number(bValue)
-            : NaN;
+        const aNum = toNumber(aValue);
+        const bNum = toNumber(bValue);
 
-        if (!isNaN(aNum) && !isNaN(bNum)) {
-          // 两者都可以转换为数字
+        if (aNum !== null && bNum !== null) {
           comparison = aNum - bNum;
         } else if (typeof aValue === 'string' && typeof bValue === 'string') {
-          // 如果都是字符串但不能转换为数字，使用字符串比较
-          comparison = aValue.localeCompare(bValue);
+          comparison = (aValue as string).localeCompare(bValue as string);
         } else {
-          // 其他情况，转换为字符串比较
           comparison = String(aValue).localeCompare(String(bValue));
         }
       } else {
-        // 不启用数字字符串处理
         if (typeof aValue === 'number' && typeof bValue === 'number') {
-          comparison = aValue - bValue; // 数字类型字段排序
+          comparison = (aValue as number) - (bValue as number);
         } else if (typeof aValue === 'string' && typeof bValue === 'string') {
-          comparison = aValue.localeCompare(bValue); // 字符串类型字段排序
+          comparison = (aValue as string).localeCompare(bValue as string);
         } else {
-          // 混合类型，转换为字符串比较
           comparison = String(aValue).localeCompare(String(bValue));
         }
       }
     }
 
-    // 根据排序顺序返回比较结果
     return order === 'asc' ? comparison : -comparison;
   });
 }

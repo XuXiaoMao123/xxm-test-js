@@ -3,7 +3,7 @@
  *
  * @param {T[] | null} tableData - 要排序的数组，数组中的每个元素应为对象，也可能为 null。
  * @param {Array<{ field: string; order?: 'asc' | 'desc' }>} sortConfigs - 排序规则数组，每个元素包含排序字段和排序顺序（默认为升序）。
- * @returns {any[]} - 返回排序后的数据数组。
+ * @returns {T[]} - 返回排序后的数据数组。
  *
  * @example
  * ```typescript
